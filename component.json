@@ -1,0 +1,50 @@
+{
+    "title": "COT Erweiterung",
+    "docsUrl": "",
+    "url": "https://phoenix.ram.m2m.telekom.com",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://phoenix.ram.m2m.telekom.com",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getAllEvents": {
+            "main": "./lib/actions/getAllEvents.js",
+            "title": "getAllEvents",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAllEvents.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

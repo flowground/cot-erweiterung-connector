@@ -1,0 +1,55 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "COT Erweiterung",
+        "version": "1.0.0",
+        "contact": {}
+    },
+    "paths": {
+        "/event/events": {
+            "get": {
+                "summary": "",
+                "description": "",
+                "parameters": [],
+                "operationId": "getAllEvents",
+                "responses": {
+                    "default": {
+                        "description": "Default response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "Basic": []
+                    }
+                ]
+            }
+        }
+    },
+    "security": [
+        {
+            "Basic": []
+        }
+    ],
+    "servers": [
+        {
+            "url": "https://phoenix.ram.m2m.telekom.com",
+            "description": ""
+        }
+    ],
+    "components": {
+        "links": {},
+        "callbacks": {},
+        "schemas": {},
+        "securitySchemes": {
+            "Basic": {
+                "type": "http",
+                "scheme": "nils.figura@telekom.de:N12j99Fcot!"
+            }
+        }
+    }
+}
